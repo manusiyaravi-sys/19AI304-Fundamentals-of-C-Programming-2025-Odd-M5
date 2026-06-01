@@ -39,7 +39,47 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include<stdio.h>
+
+void swapv(int x, int y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+
+    printf("Inside swapv (Call by Value): x = %d, y = %d\n", x, y);
+}
+
+void swapr(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+
+    printf("Inside swapr (Call by Reference): x = %d, y = %d\n", *x, *y);
+}
+
+int main()
+{
+    int a = 10, b = 20;
+
+    printf("Before swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After swapv: a = %d, b = %d\n", a, b);
+
+    printf("\nBefore swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
 # Output:
+<img width="621" height="319" alt="image" src="https://github.com/user-attachments/assets/3374fd2f-9702-415c-906a-14be5c7724e7" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +117,38 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+int fibo(int x)
+{
+    if(x == 0 || x == 1)
+        return x;
+    else
+        return fibo(x-1) + fibo(x-2);
+}
+
+int main()
+{
+    int n, i;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", fibo(i));
+    }
+
+    return 0;
+}
+```
+
 # Output:
+<img width="387" height="176" alt="image" src="https://github.com/user-attachments/assets/4ec26352-bb8c-4a8c-9e63-c5ffc2cb0271" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +190,40 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+void printEvenOdd(int cur, int limit)
+{
+    if(cur > limit)
+        return;
+
+    printf("%d ", cur);
+
+    printEvenOdd(cur + 2, limit);
+}
+
+int main()
+{
+    int lower, upper;
+
+    printf("Enter lower limit: ");
+    scanf("%d", &lower);
+
+    printf("Enter upper limit: ");
+    scanf("%d", &upper);
+
+    printf("Sequence:\n");
+
+    printEvenOdd(lower, upper);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="511" height="332" alt="image" src="https://github.com/user-attachments/assets/70d73ca9-01cb-4688-a3f5-c390e0be565a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +265,47 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int *ptr, n, i, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    ptr = (int*)calloc(n, sizeof(int));
+
+    if(ptr == NULL)
+    {
+        printf("Memory allocation failed");
+        return 0;
+    }
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", (ptr + i));
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        sum += *(ptr + i);
+    }
+
+    printf("Sum = %d", sum);
+
+    free(ptr);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="442" height="291" alt="image" src="https://github.com/user-attachments/assets/92d55753-46bf-4aac-9407-42c5d79d3bc0" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +341,37 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+void displayArray(int *arr, int size)
+{
+    int i;
+    printf("Array elements:\n");
+
+    for(i = 0; i < size; i++)
+    {
+        printf("%d ", *(arr + i));
+    }
+}
+
+int main()
+{
+    int arr[5], i;
+
+    printf("Enter 5 elements:\n");
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    displayArray(arr, 5);
+
+    return 0;
+}
+```
 # Output:
+<img width="599" height="293" alt="image" src="https://github.com/user-attachments/assets/8d316ef6-c73b-4748-b176-4860d8a4f729" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
